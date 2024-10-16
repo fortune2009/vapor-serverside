@@ -35,31 +35,6 @@ public func configure(_ app: Application) throws {
         ), as: .psql)
         
         
-       
-//        var tlsConfiguration = TLSConfiguration.makeClientConfiguration()
-//        tlsConfiguration.certificateVerification = .none
-//        let nioSSLContext = try NIOSSLContext(configuration: tlsConfiguration)
-//        let maxConnectionsPerEventLoop = 10
-//        let connectionPoolTimeout: TimeAmount = .seconds(10)
-//
-//        var postgresConfig = SQLPostgresConfiguration(
-//            hostname: Environment.get("DATABASE_HOST") ?? "localhost",
-//            port: Environment.get("DATABASE_PORT").flatMap(Int.init(_:)) ?? SQLPostgresConfiguration.ianaPortNumber,
-//            username: Environment.get("DATABASE_USERNAME") ?? "vapor_username",
-//            password: Environment.get("DATABASE_PASSWORD") ?? "vapor_password",
-//            database: Environment.get("DATABASE_NAME") ?? "vapor_database"
-//        )
-////        postgresConfig.coreConfiguration.tls = tlsConfiguration
-//
-//        app.databases.use(.postgres(
-//            configuration: postgresConfig,
-//            maxConnectionsPerEventLoop: maxConnectionsPerEventLoop,
-//            connectionPoolTimeout: connectionPoolTimeout,
-//            encodingContext: .default,
-//            decodingContext: .default,
-//            sqlLogLevel: .info
-//        ), as: .psql)
-        
     }
     
     app.migrations.add(CreateSongs())
